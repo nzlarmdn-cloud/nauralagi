@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naura's Cute & Pastel World 🌸</title>
-    <!-- Memuat Tailwind CSS -->
+    <!-- Memuat Tailwind CSS untuk styling modern -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Konfigurasi Font dan Warna Kustom -->
     <style>
@@ -23,6 +23,7 @@
             color: var(--dark-text);
         }
 
+        /* Kelas untuk membuat setiap bagian seukuran layar (Slide effect) */
         .h-slide {
             min-height: 100vh;
             display: flex;
@@ -37,11 +38,19 @@
             border-radius: 1.5rem;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             max-width: 90%;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: bounceIn 0.5s ease-out;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) rotate(-1deg);
+            box-shadow: 0 15px 30px rgba(74, 20, 140, 0.2); /* Shadow ungu */
+        }
+
+        /* Animasi masuk */
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
         /* Styling navigasi untuk responsivitas */
@@ -53,9 +62,9 @@
 <body class="selection:bg-pink-300 selection:text-white">
 
     <!-- Navbar Tetap (Fixed Navigation) -->
-    <nav class="fixed top-0 left-0 w-full z-20 bg-white bg-opacity-90 shadow-md backdrop-blur-sm">
+    <nav class="fixed top-0 left-0 w-full z-20 bg-white bg-opacity-90 shadow-lg backdrop-blur-sm">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-            <a href="#home" class="text-xl font-bold" style="color: var(--dark-text);">Naura's Cute World 💖</a>
+            <a href="#home" class="text-xl font-bold transition duration-300 hover:text-pink-500" style="color: var(--dark-text);">Naura's Cute World 💖</a>
             
             <!-- Burger Menu Button (Mobile) -->
             <button id="menu-button" class="sm:hidden p-2 rounded-lg hover:bg-pink-100 focus:outline-none focus:ring-2 focus:ring-pink-400">
@@ -64,10 +73,10 @@
             
             <!-- Navigation Links (Desktop & Mobile Menu) -->
             <div id="nav-menu" class="hidden sm:flex sm:items-center sm:space-x-6 absolute sm:static top-full left-0 w-full sm:w-auto bg-white sm:bg-transparent flex-col sm:flex-row shadow-lg sm:shadow-none">
-                <a href="#home" class="nav-item p-3 sm:p-0 hover:text-pink-600">Home</a>
-                <a href="#about" class="nav-item p-3 sm:p-0 hover:text-pink-600">Tentang Saya</a>
-                <a href="#hobbies" class="nav-item p-3 sm:p-0 hover:text-pink-600">Hobi</a>
-                <a href="#oppa" class="nav-item p-3 sm:p-0 hover:text-pink-600">Oppa Crush</a>
+                <a href="#home" class="nav-item p-3 sm:p-0 hover:text-pink-600 font-semibold">Home</a>
+                <a href="#about" class="nav-item p-3 sm:p-0 hover:text-pink-600 font-semibold">Tentang Saya</a>
+                <a href="#hobbies" class="nav-item p-3 sm:p-0 hover:text-pink-600 font-semibold">Hobi & Passion</a>
+                <a href="#fandom" class="nav-item p-3 sm:p-0 hover:text-pink-600 font-semibold">K-World Fandom</a>
             </div>
         </div>
     </nav>
@@ -75,15 +84,15 @@
     <!-- Bagian 1: Home (Ungu Pastel) -->
     <section id="home" class="h-slide text-center" style="background-color: var(--pastel-purple);">
         <div class="card max-w-4xl" style="border: 4px dashed var(--pastel-pink);">
-            <p class="text-3xl sm:text-4xl mb-4 text-pink-500">✨ Halo dan Selamat Datang! ✨</p>
-            <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight">
-                Saya Naura Nazala Ramadani!
+            <p class="text-3xl sm:text-4xl mb-4 text-pink-500">✨ Halo dan Selamat Datang di Dunia Saya! ✨</p>
+            <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight text-purple-900">
+                Naura Nazala Ramadani
             </h1>
             <p class="mt-6 text-xl sm:text-2xl text-purple-700">
-                Yuk, kenalan lebih dekat dengan dunia pastel saya yang penuh kejutan (dan oppa Korea)!
+                Siap untuk menjelajahi dunia pastel saya yang penuh kejutan, film, buku, dan Oppa Korea?
             </p>
-            <a href="#about" class="mt-8 inline-block bg-pink-500 text-white py-3 px-8 rounded-full text-lg font-bold shadow-lg hover:bg-pink-600 transition duration-300">
-                Lanjut Scroll! 👇
+            <a href="#about" class="mt-8 inline-block bg-pink-500 text-white py-3 px-8 rounded-full text-lg font-bold shadow-xl transform hover:scale-105 transition duration-300">
+                Scroll Sekarang! 🚀
             </a>
         </div>
     </section>
@@ -92,58 +101,123 @@
     <section id="about" class="h-slide text-center" style="background-color: var(--pastel-pink);">
         <div class="card max-w-3xl border-4 border-dashed border-purple-400">
             <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-purple-700">
-                🦄 Who Am I? 🦄
+                🦄 My Unique DNA 🦄
             </h2>
             <p class="text-lg sm:text-xl leading-relaxed text-gray-700">
-                Saya Naura Nazala Ramadani. Saya percaya hidup itu seperti kotak pensil warna pastel: penuh nuansa lembut, tapi tetap bisa menorehkan garis yang kuat!
+                Saya adalah Naura Nazala Ramadani, seorang penggemar hal-hal imut. Saya percaya hidup harus penuh warna lembut, namun harus dijalani dengan semangat yang kuat!
             </p>
-            <div class="mt-8 flex justify-center space-x-4">
-                <span class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-semibold">#PastelLover</span>
-                <span class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-semibold">#Dreamer</span>
-                <span class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-semibold">#NauraNR</span>
+            <div class="mt-8 flex justify-center space-x-4 flex-wrap gap-y-2">
+                <span class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-semibold shadow-md">#PastelPower</span>
+                <span class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-semibold shadow-md">#Dreamer</span>
+                <span class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-semibold shadow-md">#Koreaboo</span>
             </div>
             
+            <!-- Elemen Interaktif: Pertanyaan yang bisa diklik (FAQ/Fun Facts) -->
+            <div class="mt-10 w-full max-w-lg mx-auto space-y-4">
+                <p class="text-2xl font-extrabold text-pink-600 mb-4">
+                    Mau tahu lebih banyak? Klik ini! 👇
+                </p>
+
+                <!-- Q1: Rahasia Kecil -->
+                <div class="faq-item">
+                    <button class="fun-question-btn w-full text-left bg-purple-500 text-white py-3 px-6 rounded-xl font-extrabold shadow-lg hover:bg-purple-600 transition duration-300 transform hover:scale-[1.02]">
+                        1. ✨ Klik untuk tahu Rahasia Kecil Naura! ✨
+                    </button>
+                    <div class="fun-answer hidden mt-2 p-4 bg-pink-100 border-2 border-pink-400 rounded-xl animate-bounceIn">
+                        <p class="text-lg font-semibold text-purple-700">
+                            🤫 Rahasianya: Saya suka sekali mengoleksi stiker lucu dan alat tulis warna pastel! Itu adalah sumber semangat dan energi positif saya! 🌈
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q2: Karakter Fantasi -->
+                <div class="faq-item">
+                    <button class="fun-question-btn w-full text-left bg-purple-500 text-white py-3 px-6 rounded-xl font-extrabold shadow-lg hover:bg-purple-600 transition duration-300 transform hover:scale-[1.02]">
+                        2. 🎬 Siapa Karakter Film Fantasi yang Paling Naura Idola?
+                    </button>
+                    <div class="fun-answer hidden mt-2 p-4 bg-pink-100 border-2 border-pink-400 rounded-xl animate-bounceIn">
+                        <p class="text-lg font-semibold text-purple-700">
+                            🏹 Saya mengidolakan pahlawan wanita yang cerdas dan kuat, yang bisa memimpin dan bertarung! Mereka yang punya tekad baja seperti black widow!
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Q3: Lagu K-Pop Favorit -->
+                <div class="faq-item">
+                    <button class="fun-question-btn w-full text-left bg-purple-500 text-white py-3 px-6 rounded-xl font-extrabold shadow-lg hover:bg-purple-600 transition duration-300 transform hover:scale-[1.02]">
+                        3. 🎶 Lagu K-Pop yang Wajib Ada di Playlist Saat Olahraga?
+                    </button>
+                    <div class="fun-answer hidden mt-2 p-4 bg-pink-100 border-2 border-pink-400 rounded-xl animate-bounceIn">
+                        <p class="text-lg font-semibold text-purple-700">
+                            🔥 Apapun yang punya beat cepat dan lirik penuh semangat dari Boy Group K-pop favorit! Musik mereka harus bisa langsung membuat saya bersemangat dan lupa kalau sedang lelah!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End of Elemen Interaktif -->
+
+            <div class="mt-6 text-2xl text-pink-600">
+                <!-- Placeholder untuk ilustrasi imut -->
+                🎀 Ilustrasi kucing pastel imut dengan mahkota bunga 🌸
+            </div>
         </div>
     </section>
 
-    <!-- Bagian 3: Hobi (Cokelat/Beige Pastel) -->
+    <!-- Bagian 3: Hobi & Passion (Cokelat/Beige Pastel) -->
     <section id="hobbies" class="h-slide text-center" style="background-color: var(--pastel-brown);">
-        <div class="card max-w-3xl border-4 border-solid border-pink-500">
+        <div class="card max-w-4xl border-4 border-solid border-pink-500">
             <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-pink-700">
-                🎬 Hobi Utama: Nonton Film 🍿
+                🎬 Hobi & Keseimbangan Hidup 📖
             </h2>
-            <p class="text-lg sm:text-xl leading-relaxed text-gray-700">
-                Bagi saya, tidak ada yang lebih nyaman daripada meringkuk di sofa dengan selimut hangat dan menghabiskan hari marathon film. Dari drama sedih yang bikin mata bengkak, sampai film aksi yang bikin deg-degan. 
-            </p>
-            <ul class="mt-6 text-left inline-block space-y-3">
-                <li class="flex items-center text-lg text-purple-700">
-                    <span class="text-2xl mr-3">✨</span> Paling suka genre Romantis dan Fantasi.
-                </li>
-                <li class="flex items-center text-lg text-purple-700">
-                    <span class="text-2xl mr-3">✨</span> Wajib ada *popcorn* manis!
-                </li>
-                <li class="flex items-center text-lg text-purple-700">
-                    <span class="text-2xl mr-3">✨</span> Mencari *soundtrack* film yang *catchy*!
-                </li>
-            </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-700">
+                <!-- Hobi 1: Nonton Film -->
+                <div class="p-4 bg-pink-100 rounded-lg shadow-inner hover:shadow-lg transition duration-300">
+                    <p class="text-3xl font-bold mb-2 text-purple-700">Nonton Film 🍿</p>
+                    <p class="text-md">Favorit saya: Film Action yang memacu adrenalin dan Fantasi yang membawa saya melintasi dunia magis. Wajib ditemani snack manis!</p>
+                </div>
+                
+                <!-- Hobi 2: Baca Buku -->
+                <div class="p-4 bg-purple-100 rounded-lg shadow-inner hover:shadow-lg transition duration-300">
+                    <p class="text-3xl font-bold mb-2 text-pink-700">Baca Buku 📚</p>
+                    <p class="text-md">Saya suka tenggelam dalam lautan kata-kata, baik itu novel fiksi yang tebal maupun buku pengetahuan yang seru. A quiet escape!</p>
+                </div>
+
+                <!-- Hobi 3: Olahraga -->
+                <div class="p-4 bg-yellow-100 rounded-lg shadow-inner hover:shadow-lg transition duration-300">
+                    <p class="text-3xl font-bold mb-2 text-purple-700">Olahraga 💪</p>
+                    <p class="text-md">Tetap aktif itu penting! Olahraga menjaga semangat saya tetap menyala, siap untuk maraton drama Korea tanpa rasa bersalah. 😉</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Bagian 4: Oppa Crush (Gradien Manis) -->
-    <section id="oppa" class="h-slide text-center" style="background: linear-gradient(135deg, var(--pastel-purple) 0%, var(--pastel-pink) 100%);">
-        <div class="card max-w-4xl border-4 border-double border-white transform rotate-3 hover:rotate-0 transition duration-500">
-            <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-white bg-purple-500 inline-block px-4 py-1 rounded-lg">
-                💖 My Ultimate Oppa Crush 💖
+    <!-- Bagian 4: K-World Fandom (Gradien Manis) -->
+    <section id="fandom" class="h-slide text-center" style="background: linear-gradient(135deg, var(--pastel-purple) 0%, var(--pastel-pink) 100%);">
+        <div class="card max-w-4xl border-4 border-double border-white transform -rotate-2 hover:rotate-0 transition duration-500">
+            <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-white bg-purple-700 inline-block px-4 py-1 rounded-lg shadow-xl">
+                🇰🇷 My K-World Corner 👑
             </h2>
-            <h3 class="text-3xl sm:text-4xl font-bold mb-4 text-purple-900">
-                Lee Leo!
-            </h3>
+            
             <div class="text-lg sm:text-xl leading-relaxed text-gray-700">
-                Dia adalah favorit saya! Tatapan mata yang tajam, senyum yang manis, dan kemampuan bernyayi selalu berhasil membuat saya tersenyum (atau menangis) di depan layar.
-                <p class="mt-4 font-bold text-pink-600">
-                    Pokoknya, Lee Leo adalah definisi perfect di mata Naura! Saranghae Oppa!
+                <p class="mb-4">
+                    Saya bangga menjadi ALLYZ bagian dari fandom ALD1! Mereka tidak hanya menyajikan musik dan koreografi yang keren, tetapi juga inspirasi dan energi positif.
                 </p>
                 
+                <h3 class="text-3xl sm:text-4xl font-extrabold mt-6 mb-4 text-purple-900 leading-snug">
+                    <span class="text-pink-500">MY ULTIMATE BIAS:</span> LEE LEO!
+                </h3>
+                
+                <p>
+                    Dia adalah definisi kesempurnaan di layar kaca! Dengan tatapan yang dalam, senyum yang mematikan, dan suara yang dapat melemahkan hati saya dia adalah raja di hati Naura.
+                </p>
+                <p class="mt-4 font-extrabold text-pink-600 text-2xl">
+                    Saranghae Oppa! Selamanya Naura mendukungmu! 💜
+                </p>
+                <div class="mt-6 text-4xl">
+                    <!-- Placeholder untuk dekorasi K-Pop -->
+                    👑❤️ K-Pop Power! ❤️👑
+                </div>
             </div>
         </div>
     </section>
@@ -161,13 +235,13 @@
         menuButton.addEventListener('click', () => {
             navMenu.classList.toggle('hidden');
             navMenu.classList.toggle('flex');
-            navMenu.style.flexDirection = 'column'; // Ensure vertical stack on toggle
+            navMenu.style.flexDirection = 'column'; // Memastikan susunan vertikal saat toggle
         });
         
         // Tutup menu saat link diklik (khusus mobile)
         navItems.forEach(item => {
             item.addEventListener('click', () => {
-                if (window.innerWidth < 640) { // 640px is Tailwind's 'sm' breakpoint
+                if (window.innerWidth < 640) { // 640px adalah breakpoint 'sm' Tailwind
                     navMenu.classList.add('hidden');
                     navMenu.classList.remove('flex');
                 }
@@ -179,13 +253,26 @@
             const slides = document.querySelectorAll('.h-slide');
             const navHeight = document.querySelector('nav').offsetHeight;
             slides.forEach(slide => {
+                // Set min height 100vh dikurangi tinggi nav, dan padding agar konten tidak tertutup nav
                 slide.style.minHeight = `calc(100vh - ${navHeight}px)`;
-                slide.style.paddingTop = `${navHeight + 20}px`; // Add padding to clear fixed nav
+                slide.style.paddingTop = `${navHeight + 20}px`; 
             });
         }
 
         window.addEventListener('load', setSlideHeight);
         window.addEventListener('resize', setSlideHeight);
+
+        // JavaScript untuk Pertanyaan Interaktif (FAQ/Fun Facts)
+        const funQuestionBtns = document.querySelectorAll('.fun-question-btn');
+
+        funQuestionBtns.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling; // Mengambil elemen fun-answer berikutnya
+                
+                // Toggle visibility
+                answer.classList.toggle('hidden');
+            });
+        });
     </script>
 
 </body>
