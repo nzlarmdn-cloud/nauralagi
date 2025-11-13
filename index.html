@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="id" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naura's Cute & Pastel World 🌸</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Konfigurasi Font dan Warna Kustom -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        
+        :root {
+            --pastel-purple: #D5BFF8; /* Ungu Muda */
+            --pastel-pink: #F8BFE9;   /* Pink Muda */
+            --pastel-brown: #E8DCCF;  /* Cokelat Muda / Beige */
+            --dark-text: #4a148c;     /* Ungu gelap untuk teks */
+        }
+        
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background-color: var(--pastel-brown);
+            color: var(--dark-text);
+        }
 
+        .h-slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Styling navigasi untuk responsivitas */
+        #nav-menu {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="selection:bg-pink-300 selection:text-white">
+
+    <!-- Navbar Tetap (Fixed Navigation) -->
+    <nav class="fixed top-0 left-0 w-full z-20 bg-white bg-opacity-90 shadow-md backdrop-blur-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold" style="color: var(--dark-text);">Naura's Cute World 💖</a>
+            
+            <!-- Burger Menu Button (Mobile) -->
+            <button id="menu-button" class="sm:hidden p-2 rounded-lg hover:bg-pink-100 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+            
+            <!-- Navigation Links (Desktop & Mobile Menu) -->
+            <div id="nav-menu" class="hidden sm:flex sm:items-center sm:space-x-6 absolute sm:static top-full left-0 w-full sm:w-auto bg-white sm:bg-transparent flex-col sm:flex-row shadow-lg sm:shadow-none">
+                <a href="#home" class="nav-item p-3 sm:p-0 hover:text-pink-600">Home</a>
+                <a href="#about" class="nav-item p-3 sm:p-0 hover:text-pink-600">Tentang Saya</a>
+                <a href="#hobbies" class="nav-item p-3 sm:p-0 hover:text-pink-600">Hobi</a>
+                <a href="#oppa" class="nav-item p-3 sm:p-0 hover:text-pink-600">Oppa Crush</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Bagian 1: Home (Ungu Pastel) -->
+    <section id="home" class="h-slide text-center" style="background-color: var(--pastel-purple);">
+        <div class="card max-w-4xl" style="border: 4px dashed var(--pastel-pink);">
+            <p class="text-3xl sm:text-4xl mb-4 text-pink-500">✨ Halo dan Selamat Datang! ✨</p>
+            <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight">
+                Saya Naura Nazala Ramadani!
+            </h1>
+            <p class="mt-6 text-xl sm:text-2xl text-purple-700">
+                Yuk, kenalan lebih dekat dengan dunia pastel saya yang penuh kejutan (dan oppa Korea)!
+            </p>
+            <a href="#about" class="mt-8 inline-block bg-pink-500 text-white py-3 px-8 rounded-full text-lg font-bold shadow-lg hover:bg-pink-600 transition duration-300">
+                Lanjut Scroll! 👇
+            </a>
+        </div>
+    </section>
+
+    <!-- Bagian 2: Tentang Saya (Pink Pastel) -->
+    <section id="about" class="h-slide text-center" style="background-color: var(--pastel-pink);">
+        <div class="card max-w-3xl border-4 border-dashed border-purple-400">
+            <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-purple-700">
+                🦄 Who Am I? 🦄
+            </h2>
+            <p class="text-lg sm:text-xl leading-relaxed text-gray-700">
+                Saya Naura Nazala Ramadani. Saya percaya hidup itu seperti kotak pensil warna pastel: penuh nuansa lembut, tapi tetap bisa menorehkan garis yang kuat!
+            </p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <span class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-semibold">#PastelLover</span>
+                <span class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-semibold">#Dreamer</span>
+                <span class="bg-purple-200 text-purple-800 px-4 py-2 rounded-full font-semibold">#NauraNR</span>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Bagian 3: Hobi (Cokelat/Beige Pastel) -->
+    <section id="hobbies" class="h-slide text-center" style="background-color: var(--pastel-brown);">
+        <div class="card max-w-3xl border-4 border-solid border-pink-500">
+            <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-pink-700">
+                🎬 Hobi Utama: Nonton Film 🍿
+            </h2>
+            <p class="text-lg sm:text-xl leading-relaxed text-gray-700">
+                Bagi saya, tidak ada yang lebih nyaman daripada meringkuk di sofa dengan selimut hangat dan menghabiskan hari marathon film. Dari drama sedih yang bikin mata bengkak, sampai film aksi yang bikin deg-degan. 
+            </p>
+            <ul class="mt-6 text-left inline-block space-y-3">
+                <li class="flex items-center text-lg text-purple-700">
+                    <span class="text-2xl mr-3">✨</span> Paling suka genre Romantis dan Fantasi.
+                </li>
+                <li class="flex items-center text-lg text-purple-700">
+                    <span class="text-2xl mr-3">✨</span> Wajib ada *popcorn* manis!
+                </li>
+                <li class="flex items-center text-lg text-purple-700">
+                    <span class="text-2xl mr-3">✨</span> Mencari *soundtrack* film yang *catchy*!
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Bagian 4: Oppa Crush (Gradien Manis) -->
+    <section id="oppa" class="h-slide text-center" style="background: linear-gradient(135deg, var(--pastel-purple) 0%, var(--pastel-pink) 100%);">
+        <div class="card max-w-4xl border-4 border-double border-white transform rotate-3 hover:rotate-0 transition duration-500">
+            <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-white bg-purple-500 inline-block px-4 py-1 rounded-lg">
+                💖 My Ultimate Oppa Crush 💖
+            </h2>
+            <h3 class="text-3xl sm:text-4xl font-bold mb-4 text-purple-900">
+                Lee Leo!
+            </h3>
+            <div class="text-lg sm:text-xl leading-relaxed text-gray-700">
+                Dia adalah favorit saya! Tatapan mata yang tajam, senyum yang manis, dan kemampuan aktingnya selalu berhasil membuat saya tersenyum (atau menangis) di depan layar.
+                <p class="mt-4 font-bold text-pink-600">
+                    Pokoknya, Lee Leo adalah definisi *perfect* di mata Naura! Saranghae Oppa!
+                </p>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-6 bg-purple-900 text-purple-200 text-sm">
+        <p>Dibuat dengan cinta (dan warna pastel) oleh Naura Nazala Ramadani. ✨</p>
+    </footer>
+
+    <script>
+        // JavaScript untuk menangani menu burger di mobile
+        const menuButton = document.getElementById('menu-button');
+        const navMenu = document.getElementById('nav-menu');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        menuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('flex');
+            navMenu.style.flexDirection = 'column'; // Ensure vertical stack on toggle
+        });
+        
+        // Tutup menu saat link diklik (khusus mobile)
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth < 640) { // 640px is Tailwind's 'sm' breakpoint
+                    navMenu.classList.add('hidden');
+                    navMenu.classList.remove('flex');
+                }
+            });
+        });
+
+        // Setel tinggi minimal slide agar selalu fullscreen
+        function setSlideHeight() {
+            const slides = document.querySelectorAll('.h-slide');
+            const navHeight = document.querySelector('nav').offsetHeight;
+            slides.forEach(slide => {
+                slide.style.minHeight = `calc(100vh - ${navHeight}px)`;
+                slide.style.paddingTop = `${navHeight + 20}px`; // Add padding to clear fixed nav
+            });
+        }
+
+        window.addEventListener('load', setSlideHeight);
+        window.addEventListener('resize', setSlideHeight);
+    </script>
+
+</body>
+</html>
